@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/8-places.css') }}?cache_id={{ cache_id }}">
     <link rel="icon" href="../static/images/icon.png"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='scripts/1-hbnb.js') }}?cache_id={{ cache_id }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/2-hbnb.js') }}?cache_id={{ cache_id }}"></script>
     <title>HBnB</title>
     <!-- <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css"> -->
     <!--<link rel="stylesheet" type="text/css" href="../static/styles/3-header.css">
@@ -20,6 +20,7 @@
   <body>
     <header>
       <div class="logo"></div>
+      <div id="api_status"></div>
     </header>
     <div class="container">
       <section class="filters">
