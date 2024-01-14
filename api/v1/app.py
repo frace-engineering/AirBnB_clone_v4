@@ -1,10 +1,19 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """
 Flask App that integrates with AirBnB static HTML Template
 """
 from api.v1.views import app_views
 from flask import Flask, jsonify, make_response, render_template, url_for
 from flask_cors import CORS, cross_origin
+=======
+""" Flask Application """
+from flask import Flask, abort, render_template, make_response, jsonify
+from models import storage
+from api.v1.views import app_views
+from os import environ
+from flask_cors import CORS
+>>>>>>> f7ca81b5d757da9e2697dcb041c742cd287be516
 from flasgger import Swagger
 from models import storage
 import os
@@ -12,6 +21,7 @@ from werkzeug.exceptions import HTTPException
 
 # Global Flask Application Variable: app
 app = Flask(__name__)
+<<<<<<< HEAD
 swagger = Swagger(app)
 
 # global strict slashes
@@ -36,6 +46,8 @@ def teardown_db(exception):
     the current SQLAlchemy Session
     """
     storage.close()
+=======
+>>>>>>> f7ca81b5d757da9e2697dcb041c742cd287be516
 
 
 @app.errorhandler(404)
@@ -48,6 +60,24 @@ def handle_404(exception):
     message = {'error': description}
     return make_response(jsonify(message), code)
 
+<<<<<<< HEAD
+=======
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
+app.register_blueprint(app_views)
+
+
+@app.teardown_appcontext
+def close_db(error):
+    """ Close Storage """
+    storage.close()
+
+
+app.config['SWAGGER'] = {
+    'title': 'AirBnB clone Restful API',
+    'uiversion': 3
+}
+>>>>>>> f7ca81b5d757da9e2697dcb041c742cd287be516
 
 @app.errorhandler(400)
 def handle_404(exception):
@@ -85,6 +115,7 @@ def setup_global_errors():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     """
     MAIN Flask App
     """
@@ -92,3 +123,9 @@ if __name__ == "__main__":
     setup_global_errors()
     # start Flask app
     app.run(host=host, port=port)
+=======
+    """ Main Function """
+    host = environ.get('HBNB_API_HOST', '0.0.0.0')
+    port = environ.get('HBNB_API_PORT', 5001)
+    app.run(host=host, port=port, threaded=True, debug=True)
+>>>>>>> f7ca81b5d757da9e2697dcb041c742cd287be516

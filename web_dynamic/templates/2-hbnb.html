@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css">
@@ -11,10 +12,30 @@
     <title>HBnB</title>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="static/scripts/2-hbnb.js"></script>
+=======
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/4-common.css') }}?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-header.css') }}?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-footer.css') }}?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/6-filters.css') }}?cache_id={{ cache_id }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/8-places.css') }}?cache_id={{ cache_id }}">
+    <link rel="icon" href="../static/images/icon.png"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/2-hbnb.js') }}?cache_id={{ cache_id }}"></script>
+    <title>HBnB</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css"> -->
+    <!--<link rel="stylesheet" type="text/css" href="../static/styles/3-header.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css">
+    <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css">-->
+>>>>>>> f7ca81b5d757da9e2697dcb041c742cd287be516
   </head>
   <body>
     <header>
       <div class="logo"></div>
+<<<<<<< HEAD
+=======
+      <div id="api_status"></div>
+>>>>>>> f7ca81b5d757da9e2697dcb041c742cd287be516
     </header>
     <div class="container">
       <section class="filters">
@@ -42,7 +63,14 @@
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
+<<<<<<< HEAD
 	      <li><input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" > {{ amenity.name }}</li>
+=======
+	      <li>
+		      <input type="checkbox" style="margin-left: 10px" data-id="{{ amenity_id }}" data-name="{{ amenity_name }}">
+		      {{ amenity.name }}
+	      </li>
+>>>>>>> f7ca81b5d757da9e2697dcb041c742cd287be516
 	      {% endfor %}
 	    </ul>
 	  </div>
