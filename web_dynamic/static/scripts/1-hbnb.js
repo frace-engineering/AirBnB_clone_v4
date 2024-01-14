@@ -14,5 +14,4 @@ $(document).ready(function()
 
         $('.menities.popover > li').text(Object.values(amenityIDs).join(', '));
     });
-	$(".popover  li").text("Yes we are here");
 });
